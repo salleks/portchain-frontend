@@ -1,0 +1,88 @@
+@import '../css/themes';
+@import '../css/mixin';
+
+
+$gradientRowList : theme-var($--color-primary) 0% , theme-var($--color-secondary) 100%;
+
+
+.application-dashboard-root {
+  margin: auto;
+  max-width: 100%;
+  padding: 40px 20px;
+  position: relative;
+}
+
+
+.grid-header {
+  @include component-border-basic();
+  > div {
+    //@include gradient(to bottom,$gradientRowList);
+    color: $--color-primary;
+    //text-shadow: 0px 1px 2px black;
+    //box-shadow: 0px 3px 8px -4px black;
+    }
+}
+
+.schedule-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+
+  &.main-schedule-grid {
+
+    .port-unique-name {
+      flex: 1;
+    }
+
+  }
+
+}
+
+.schedule-grid-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #eee;
+  line-height: 2.2;
+
+  &.grid-header {
+    line-height: 1.5;
+    &:hover {
+      cursor: default;
+      box-shadow: none;
+    }
+  }
+
+  &:nth-of-type(even) {
+    background: rgba(206, 239, 253, 0.18);
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 5px -2px black;
+  }
+
+  > div {
+    flex: 2;
+    border-right: 1px solid #eee;
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+  }
+}
+
+.port-history-root {
+  min-width: 1000px;
+  padding: 25px;
+}
+
+
+
+
+
+

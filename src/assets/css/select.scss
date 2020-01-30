@@ -1,0 +1,108 @@
+@import 'themes';
+@import 'mixin';
+
+$c-padding-up-down-options : 4px;
+
+.hw-select-root {
+  @include no-user-select;
+  position: relative;
+  //margin-bottom: 15px;
+}
+
+.hw-select-choose-section {
+  @include  box-shadow-open;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  z-index: 25;
+  top: $c-padding-up-down-options*2 + 30px + 50px;
+  overflow-y: auto;
+  transform: rotateY(0deg);
+  transition: transform 0.5s ;
+  &.select-show {
+    transform: rotateY(0deg);
+  }
+}
+
+.hw-select-option {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #f4f4f4;
+
+  &:last-child {
+    border: 0px;
+  }
+
+  &.main-selection {
+    height: 100%;
+  }
+
+  &:hover {
+    @include color-gradient-hover;
+  }
+}
+
+.hw-select-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding :$c-padding-up-down-options  12px;
+  line-height: 1.21;
+  height: $c-padding-up-down-options*2 + 30px;
+}
+
+.hw-select-label {
+  color: theme-var($--color-primary-font);
+  font-size: calc( #{$c-font-size});
+  text-shadow: 0px 1px 1px #bebebe;
+  &.hw-select-desc {
+    font-size: calc( #{$c-font-size} *1.05);
+  }
+}
+
+.hw-select-description {
+  font-size: calc( #{$c-font-size} * 0.8);
+  color: theme-var($--color-primary);
+  opacity: 0.8;
+}
+
+.hw-select-icon {
+  position: absolute;
+  padding: 1px 5px;
+  z-index: 8;
+  left: 0px;
+  color: theme-var($--color-primary);
+  &.main-icon-arrow {
+    left: auto;
+    right: 4px;
+    transform: scale(1.5);
+    color: theme-var($--color-primary);
+    opacity: 0.5;
+  }
+  &.right {
+    left: auto;
+    right: 4px;
+    opacity: 0.7;
+    font-size: 12px;
+  }
+}
+
+.hw-select-selected {
+  height: $c-component-height;
+  @include component-border-basic;
+
+  .hw-select-placeholder {
+    transform: scale(1.1);
+    opacity: 0.4;
+  }
+
+  &.error {
+    .hw-select-placeholder {
+      color:  theme-var($--color-error)
+    }
+  }
+}

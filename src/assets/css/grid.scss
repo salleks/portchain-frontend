@@ -1,0 +1,445 @@
+
+@import 'mixin';
+
+
+.container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.grid {
+  @include flex-align-items();
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+
+  @media screen and (max-width: $c-mobile-version-width) {
+    margin-bottom: 5px;
+  }
+}
+
+.grid-1 {
+  -ms-flex: 0 0 8.333333%;
+  flex: 0 0 8.333333%;
+  max-width: 8.333333%;
+}
+
+.grid-2 {
+  -ms-flex: 0 0 16.666667%;
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+}
+
+.grid-3 {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.grid-4 {
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.grid-5 {
+  -ms-flex: 0 0 41.666667%;
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+
+.grid-6 {
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.grid-7 {
+  -ms-flex: 0 0 58.333333%;
+  flex: 0 0 58.333333%;
+  max-width: 58.333333%;
+}
+
+.grid-8 {
+  -ms-flex: 0 0 66.666667%;
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+}
+
+.grid-9 {
+  -ms-flex: 0 0 75%;
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.grid-10 {
+  -ms-flex: 0 0 83.333333%;
+  flex: 0 0 83.333333%;
+  max-width: 83.333333%;
+}
+
+.grid-11 {
+  -ms-flex: 0 0 91.666667%;
+  flex: 0 0 91.666667%;
+  max-width: 91.666667%;
+}
+
+.grid-12 {
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.grid-space-1 {
+  @include padding-grid(4px);
+}
+.grid-space-2 {
+  @include padding-grid(5px);
+}
+.grid-space-3 {
+  @include padding-grid(6px);
+}
+.grid-space-4 {
+  @include padding-grid(7px);
+}
+.grid-space-5 {
+  @include padding-grid(8px);
+}
+.grid-space-6 {
+  @include padding-grid(9px);
+}
+.grid-space-7 {
+  @include padding-grid(10px);
+}
+.grid-space-8 {
+  @include padding-grid(12px);
+}
+.grid-space-9 {
+  @include padding-grid(14px);
+}
+.grid-space-10 {
+  @include padding-grid(16px);
+}
+
+@media (min-width: 1150px) {
+
+  .grid-lg-1 {
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+
+  .grid-lg-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+
+  .grid-lg-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .grid-lg-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .grid-lg-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+
+  .grid-lg-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .grid-lg-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+
+  .grid-lg-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+
+  .grid-lg-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  .grid-lg-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+
+  .grid-lg-11 {
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+  }
+
+  .grid-lg-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .grid-space-lg-1 {
+    @include padding-grid(8px);
+  }
+  .grid-space-lg-2 {
+    @include padding-grid(12px);
+  }
+  .grid-space-lg-3 {
+    @include padding-grid(16px);
+  }
+  .grid-space-lg-4 {
+    @include padding-grid(20px);
+  }
+  .grid-space-lg-5 {
+    @include padding-grid(24px);
+  }
+  .grid-space-lg-6 {
+    @include padding-grid(28px);
+  }
+  .grid-space-lg-7 {
+    @include padding-grid(32px);
+  }
+  .grid-space-lg-8 {
+    @include padding-grid(36px);
+  }
+  .grid-space-lg-9 {
+    @include padding-grid(40px);
+  }
+  .grid-space-lg-10 {
+    @include padding-grid(45px);
+  }
+}
+
+@media (min-width: 770px) {
+  .grid-md-1 {
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+
+  .grid-md-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+
+  .grid-md-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .grid-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .grid-md-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+
+  .grid-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .grid-md-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+
+  .grid-md-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+
+  .grid-md-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  .grid-md-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+
+  .grid-md-11 {
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+  }
+
+  .grid-md-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .grid-space-md-1 {
+    @include padding-grid(6px);
+  }
+  .grid-space-md-2 {
+    @include padding-grid(8px);
+  }
+  .grid-space-md-3 {
+    @include padding-grid(10px);
+  }
+  .grid-space-md-4 {
+    @include padding-grid(12px);
+  }
+  .grid-space-md-5 {
+    @include padding-grid(14px);
+  }
+  .grid-space-md-6 {
+    @include padding-grid(18px);
+  }
+  .grid-space-md-7 {
+    @include padding-grid(20px);
+  }
+  .grid-space-md-8 {
+    @include padding-grid(24px);
+  }
+  .grid-space-md-9 {
+    @include padding-grid(28px);
+  }
+  .grid-space-md-10 {
+    @include padding-grid(32px);
+  }
+}
+
+
+
+
+@media (max-width: 760px) {
+  .grid-sm-1 {
+    -ms-flex: 0 0 8.333333%;
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+
+  .grid-sm-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+
+  .grid-sm-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .grid-sm-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .grid-sm-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
+
+  .grid-sm-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .grid-sm-7 {
+    -ms-flex: 0 0 58.333333%;
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+
+  .grid-sm-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+
+  .grid-sm-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  .grid-sm-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+
+  .grid-sm-11 {
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+  }
+
+  .grid-sm-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .grid-space-sm-1 {
+    @include padding-grid(6px);
+  }
+  .grid-space-sm-2 {
+    @include padding-grid(8px);
+  }
+  .grid-space-sm-3 {
+    @include padding-grid(10px);
+  }
+  .grid-space-sm-4 {
+    @include padding-grid(12px);
+  }
+  .grid-space-sm-5 {
+    @include padding-grid(14px);
+  }
+  .grid-space-sm-6 {
+    @include padding-grid(18px);
+  }
+  .grid-space-sm-7 {
+    @include padding-grid(20px);
+  }
+  .grid-space-sm-8 {
+    @include padding-grid(24px);
+  }
+  .grid-space-sm-9 {
+    @include padding-grid(28px);
+  }
+  .grid-space-sm-10 {
+    @include padding-grid(32px);
+  }
+}
+
+

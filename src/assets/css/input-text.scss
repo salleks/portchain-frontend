@@ -1,0 +1,111 @@
+
+@import 'mixin';
+@import 'themes';
+
+.hw-input-text-root{
+  font-size: $c-font-input-size;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.41;
+  //margin-bottom: 15px;
+  position: relative;
+
+  &:first-child {
+    //margin-top: 0px;
+    @media screen and (max-width: $c-mobile-version-width) {
+      //margin-top: 2px;
+    }
+  }
+
+  .hw-input-group {
+    position: relative;
+
+    .hw-input-icon {
+      ~ .hw-input-text {
+        padding-left: 25px;
+      }
+    }
+
+    .hw-input-icon-action {
+      ~ .hw-input-text {
+        padding-right: 30px;
+      }
+    }
+
+    .hw-input-icon {
+      position: absolute;
+      top: 15px;
+      left: 7px;
+      font-size: 15px;
+      color: theme-var($--prefix-icon-color);
+    }
+
+    .hw-input-icon-action{
+      position: absolute;
+      top: 15px;
+      right: 7px;
+      font-size: 15px;
+      color: theme-var($--prefix-icon-color);
+      cursor: pointer;
+    }
+  }
+
+  .hw-input-text{
+    color: theme-var($--color-primary-font);
+    background-clip: padding-box;
+    padding: 12px 8px;
+    box-shadow: none;
+    font-size: 15px;
+    width: 100%;
+    height: $c-component-height;
+
+    @include component-border-basic;
+    &:focus {
+      box-shadow: 0 0 0 1px theme-var($--color-primary);
+      outline: none;
+    }
+  }
+
+  &.error {
+    .hw-input-text {
+      color: theme-var($--color-error);
+      border-color: theme-var($--color-error);
+      &:focus{
+        box-shadow: 0 0 0 1px theme-var($--color-error);
+      }
+    }
+  }
+
+}
+
+.align-left {
+  input {
+    text-align: left;
+  }
+}
+.align-center {
+  input {
+    text-align: center;
+  }
+}
+.align-right {
+  input {
+    text-align: right;
+  }
+}
+
+.hw-input-text-date-picker {
+  position: relative;
+
+  .hw-input-text-root{
+
+    &.readOnly {
+      * {
+        cursor: default;
+        color: inherit;
+        opacity:1;
+      }
+    }
+
+  }
+}

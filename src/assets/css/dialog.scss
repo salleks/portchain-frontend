@@ -1,0 +1,252 @@
+@import 'themes';
+@import 'mixin';
+@import 'constants';
+
+.hw-dialog-centered-root{
+  position: fixed;
+  z-index: 3000;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
+
+.hw-dialog-shadow{
+  display: flex;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-tap-highlight-color: transparent;
+}
+
+@-webkit-keyframes dialog-anim {
+  0% { opacity: 0; -webkit-transform: scale3d(1.1, 1.1, 1); }
+  100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); }
+}
+
+@keyframes dialog-anim {
+  0% { opacity: 0; -webkit-transform: scale3d(1.1, 1.1, 1); transform: scale3d(1.1, 1.1, 1); }
+  100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1); }
+}
+
+.hw-dialog {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-animation: dialog-anim 0.2s ease-in-out;
+  animation: dialog-anim  0.2s ease-in-out;
+}
+
+
+.hw-dialog-root {
+  @include no-user-select;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2), 0px 24px 38px 3px rgba(0,0,0,0.14), 0px 9px 46px 8px rgba(0,0,0,0.12);
+  z-index: 51;
+  background: #FEFEFE;
+  min-width: 370px;
+  min-height: 150px;
+  position: relative;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: $c-mobile-version-width) {
+    min-width: 95%;
+    width: 95%;
+    margin: auto;
+  }
+
+
+  .hw-dialog-header {
+    text-align: center;
+    margin: 0px 0px;
+    min-height: 26px;
+    display: flex;
+    align-items: center;
+    padding: 0px 5px;
+    flex: 0.25;
+    background: -moz-linear-gradient(top,  #ffffff 20%, #e5e5e5 100%);
+    background: -webkit-linear-gradient(top,  #ffffff 20%,#e5e5e5 100%);
+    background: linear-gradient(to bottom,  #ffffff 20%,#e5e5e5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+
+
+    &.error {
+      text-align: left;
+      color:  theme-var($--color-danger);
+      text-align: left;
+      margin: 5px 10px;
+    }
+
+    &.info {
+      text-align: left;
+      color: theme-var($--color-primary);
+    }
+
+    &.question {
+      text-align: left;
+      margin: 5px 10px;
+      color: theme-var($--color-primary);
+      text-align: left;
+      margin: 5px 10px;
+    }
+
+    &.hw-dialog-logo {
+      text-align: left;
+      margin-left: 20px;
+      padding-top: 10px;
+      > img {
+        max-width: 70px;
+        max-height: 40px;
+      }
+    }
+
+    .hw-close-dialog {
+      color: #aaa;
+      font-size: 20px;
+      position: absolute;
+      right: 10px;
+      top: -3px;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.07);
+      }
+    }
+  }
+
+  .hw-dialog-content {
+    font-size: $c-font-label-size;
+    color: theme-var($--color-primary);
+    word-break: break-word;
+    white-space: pre-line;
+    z-index: 2;
+    text-align: center;
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.error {
+      color: #8a181c;
+    }
+  }
+
+  .hw-dialog-sub-content{
+    text-align: center;
+    margin: 10px 0px;
+    min-height: 40px;
+    position: relative;
+    color: theme-var($--color-primary);
+    font-size: 12px;
+  }
+
+  .hw-dialog-action {
+    margin: 10px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    > button:not(last-child) {
+      margin-right: 10px;
+    }
+
+  }
+
+  .hw-dialog-icon {
+    position: absolute;
+    right: 3%;
+    bottom: 10px;
+
+    .hw-info{
+      font-size: 60px;
+      color: theme-var($--color-primary);
+      opacity: 0.4;
+    }
+
+    .hw-success{
+      font-size: 60px;
+      color: theme-var($--color-success);
+      opacity: 0.2;
+    }
+
+    .hw-error{
+      color: theme-var($--color-danger);
+      font-size: 60px;
+      opacity: 0.2;
+    }
+
+    &.info{
+      svg {
+        font-size: 60px;
+        color: theme-var($--color-primary);
+        opacity: 0.1;
+      }
+    }
+
+    &.question{
+      svg {
+        color: theme-var($--color-primary);
+        font-size: 60px;
+        opacity: 0.1;
+      }
+    }
+
+    &.error{
+      svg {
+        color: theme-var($--color-danger);
+        font-size: 60px;
+        opacity: 0.1;
+      }
+
+    }
+  }
+
+
+  &.error {
+    color: inherit;
+
+    box-shadow: 1px 6px 7px -4px #a8a8a8;
+    .hw-dialog-header {
+      .hw-close-dialog {
+        > svg {
+          color: theme-var($--color-danger);
+        }
+      }
+
+    }
+
+
+  }
+
+
+}
+
+
+.dialog-show {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  width: 90vw;
+  height: 100vh;
+  padding: 0px 30px;
+
+  > div{
+    padding: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .hw-dialog {
+    height: 350px;
+  }
+}
