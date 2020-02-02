@@ -93,6 +93,7 @@ const ApplicationDashboard = () => {
   return (
     <div className={'application-dashboard-root'}>
       {loading || loadingPorts || loadingSchedule ? <SpinnerLoadingCenter/> : <></>}
+
       <Grid container>
         <Grid container>
           <Grid size={1}></Grid>

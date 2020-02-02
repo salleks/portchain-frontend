@@ -1,5 +1,48 @@
-import gql           from 'graphql-tag'
-import {ApolloCache} from 'apollo-cache'
+import gql from 'graphql-tag'
+
+gql`
+   scalar DateTime
+
+  type PortCall {
+    id: ID!
+    arrivalDate: DateTime!
+    departureDate: DateTime!
+    initStatus: Int!
+    lastStatus: Int!
+    validSequence: Int!
+    fkPortCallId: Int
+    fkPortId: Int!
+    fkVesselId: Int!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+    }
+
+  type PortCallHistory {
+    id: ID!
+    arrivalDate: DateTime!
+    departureDate: DateTime!
+    initStatus: Int!
+    lastStatus: Int!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+  }
+`
+
+const portCallDetails = gql`
+  fragment portCallDetails on PortCall {
+      id
+      arrivalDate
+      departureDate
+      initStatus
+      lastStatus
+      validSequence
+      fkPortCallId
+      fkPortId
+      fkVesselId
+      createdAt
+      updatedAt
+   }
+`
 
 const QUERY = {
   VESSELS: gql`
@@ -24,32 +67,24 @@ const QUERY = {
   VESSEL_SCHEDULE : gql`
      query validSchedule($vessel: Int!) {
           data:validSchedule(vessel: $vessel) {
-             id
-             fkPortId
-             lastStatus
-             createdAt
-             initStatus
-             lastStatus
-             updatedAt
-             arrivalDate
-             departureDate
+             ...portCallDetails
           }
       }
+      ${portCallDetails}
   `,
 
   PORT_HISTORY : gql`
     query portHistory($portCallId: Int!) {
         data: portHistory(portCallId: $portCallId) {
             id
-            fkPortId
             initStatus
             lastStatus
-            arrivalDate
             departureDate
+            arrivalDate
             createdAt
             updatedAt
         }
-    }
+    }   
   `
 }
 
