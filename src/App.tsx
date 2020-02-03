@@ -12,8 +12,8 @@ import {
 const cache = new InMemoryCache()
 
 const link = createHttpLink({
-  // uri: 'https://challenge-wexxs2.herokuapp.com/',
-  uri: 'http://localhost:4000',
+  uri: 'https://challenge-wexxs2.herokuapp.com/',
+ // uri: 'http://localhost:4000',
   credentials: 'include'
 })
 
