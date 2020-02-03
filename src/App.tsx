@@ -12,7 +12,7 @@ import {
 const cache = new InMemoryCache()
 
 const link = createHttpLink({
-  uri: process.env.REACT_APP_API_ENDPOINT,
+  uri: process.env.REACT_APP_API_ENDPOINT ?  process.env.REACT_APP_API_ENDPOINT  : 'http://localhost:4000',
   credentials: 'include'
 })
 
