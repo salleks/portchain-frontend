@@ -47,6 +47,8 @@ const ApplicationDashboard = () => {
     variables: {
       vessel: +vessel.vessel
     },
+    notifyOnNetworkStatusChange: true,
+    fetchPolicy: 'network-only',
     skip: !vessel.vessel
   })
 
@@ -85,6 +87,9 @@ const ApplicationDashboard = () => {
   const handlerTableClick = (port : IPortModel,portCallId : number) => {
     openDialogPortHistory(port,portCallId,apolloClient)
   }
+
+
+  console.log(dataOfSchedule)
 
  /* setTimeout(() => {
     openDialogPortHistory({id:30,name:'Antwerpen',portUniqueStr:'BEANR'},420,apolloClient)
