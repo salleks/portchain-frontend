@@ -8,7 +8,7 @@ import {formatDate} from './utils'
 const ScheduleTableRow = (data : IScheduleTableRowData) => {
   return (
     <div className={'schedule-grid-row'} onClick={() => data.handlerTableClick(data.port,data.id)}>
-      <div>{data.port ? data.port.name : ''} <small>{data.id}</small>  -  <small>   {data.port ? data.port.id : ''}</small></div>
+      <div>{data.port ? data.port.name : ''}</div>
       <div className={'port-unique-name'}>{data.port ? data.port.portUniqueStr : ''}</div>
       <div>{formatDate(data.arrivalDate)}</div>
       <div>{formatDate(data.departureDate)}</div>
